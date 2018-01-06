@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour {
     }
     else if(Input.GetAxisRaw("Horizontal") < 0f) {
       myRigidbody.velocity = new Vector3(-moveSpeed, myRigidbody.velocity.y, 0f);
+    } else {
+      myRigidbody.velocity = new Vector3(0f, myRigidbody.velocity.y, 0f);
     }
   }
 }
