@@ -2,11 +2,14 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-  void Start () {
+  public float moveSpeed;
+  private Rigidbody2D myRigidbody;
 
+  void Start () {
+    myRigidbody = GetComponent<Rigidbody2D>();
   }
 
   void Update () {
-    
+
   }
 }
