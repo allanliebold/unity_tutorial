@@ -10,6 +10,11 @@ public class PlayerController : MonoBehaviour {
   }
 
   void Update () {
-
+    if(Input.GetAxisRaw("Horizontal") > 0f) {
+      myRigidbody.velocity = new Vector3(moveSpeed, myRigidbody.velocity.y, 0f);
+    }
+    else if(Input.GetAxisRaw("Horizontal") < 0f) {
+      myRigidbody.velocity = new Vector3(-moveSpeed, myRigidbody.velocity.y, 0f);
+    }
   }
 }
