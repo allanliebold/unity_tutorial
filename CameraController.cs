@@ -5,6 +5,7 @@ public class CameraController : MonoBehaviour {
 
   public GameObject target;
   public float viewAhead;
+  public float cameraSpeed;
 
   private Vector3 targetPosition;
 
@@ -17,6 +18,6 @@ public class CameraController : MonoBehaviour {
       targetPosition = new Vector3(targetPosition.x - viewAhead, targetPosition.y, targetPosition.z);
     }
 
-    transform.position = targetPosition;
+    transform.position = Vector3.Lerp(transform.position, targetPosition, cameraSpeed * Time.deltaTime);
   }
 }
