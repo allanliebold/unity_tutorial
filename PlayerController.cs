@@ -39,4 +39,10 @@ public class PlayerController : MonoBehaviour {
     playerAnimator.SetFloat("Speed", Mathf.Abs(myRigidbody.velocity.x));
     playerAnimator.SetBool("Grounded", isGrounded);
   }
+
+  void OnTriggerEnter2D(Collider2D other) {
+    if (other.tag == "Boundary") {
+      gameObject.SetActive(false);
+    }
+  }
 }
