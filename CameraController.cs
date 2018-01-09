@@ -4,8 +4,19 @@ using System.Collections;
 public class CameraController : MonoBehaviour {
 
   public GameObject target;
+  public float viewAhead;
+
+  private Vector3 targetPosition;
 
   void Update() {
-    transform.position = new Vector3(target.tranform.position.x, tranform.position.y, transform.position.z);
+    targetPosition = new Vector3(target.tranform.position.x, tranform.position.y, transform.position.z);
+
+    if(target.transform.localScale.x > 0f) {
+      targetPosition = new Vector3(targetPosition.x + viewAhead, targetPosition.y, targetPosition.z);
+    } else {
+      targetPosition = new Vector3(targetPosition.x - viewAhead, targetPosition.y, targetPosition.z);
+    }
+
+    transform.position = targetPosition;
   }
 }
