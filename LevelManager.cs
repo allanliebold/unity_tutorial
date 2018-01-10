@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour {
     Instantiate(deathAnimation, thePlayer.transform.position, thePlayer.transform.rotation);
 
     yield return new WaitForSeconds(respawnTime);
+    thePlayer.transform.parent = null;
     thePlayer.transform.position = thePlayer.respawnPosition;
     thePlayer.gameObject.SetActive(true);
   }
