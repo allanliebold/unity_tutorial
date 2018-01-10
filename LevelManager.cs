@@ -6,6 +6,8 @@ public class LevelManager : MonoBehaviour {
   public float respawnTime;
   public PlayerController thePlayer;
 
+  public GameObject deathAnimation;
+
   void Start() {
     thePlayer = FindObjectOfType<PlayerController>();
   }
@@ -16,6 +18,7 @@ public class LevelManager : MonoBehaviour {
 
   public IEnumerator RespawnCo() {
     thePlayer.gameObject.SetActive(false);
+    Instantiate(deathAnimation, thePlayer.transform.position, thePlayer.transform.rotation);
 
     yield return new WaitForSeconds(respawnTime);
     thePlayer.transform.position = thePlayer.respawnPosition;
