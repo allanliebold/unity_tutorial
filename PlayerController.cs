@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
   private Rigidbody2D myRigidbody;
+  public LevelManager levelManager;
 
   public float moveSpeed;
   public float jumpHeight;
@@ -16,6 +17,9 @@ public class PlayerController : MonoBehaviour {
 
   void Start () {
     myRigidbody = GetComponent<Rigidbody2D>();
+    myAnimator = GetComponent<Animator>();
+    respawnPosition = transform.position;
+    levelManager = FindObjectOfType<LevelManager>();
   }
 
   void Update () {
@@ -42,7 +46,7 @@ public class PlayerController : MonoBehaviour {
 
   void OnTriggerEnter2D(Collider2D other) {
     if (other.tag == "Boundary") {
-      gameObject.SetActive(false);
+      levelManager.Respawn();
     }
 
     if (other.tag == "Checkpoint") {
