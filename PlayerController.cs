@@ -44,5 +44,9 @@ public class PlayerController : MonoBehaviour {
     if (other.tag == "Boundary") {
       gameObject.SetActive(false);
     }
+
+    if (other.tag == "Checkpoint") {
+      respawnPosition = other.transform.position;
+    }
   }
 }
