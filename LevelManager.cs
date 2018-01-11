@@ -1,22 +1,26 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class LevelManager : MonoBehaviour {
 
   public float respawnTime;
   public PlayerController thePlayer;
+
   public int coinCount;
+  public Text coinText;
 
   public GameObject deathAnimation;
 
   void Start() {
     thePlayer = FindObjectOfType<PlayerController>();
     coinCount = 0;
+    coinText.text = "Coins:" + coinCount;
   }
 
   public void CoinPickup(int coinValue) {
     coinCount += coinValue;
-    Debug.log("Coins: " + coinCount);
+    coinText.text = "Coins: " + coinCount;
   }
 
   public void Respawn() {
