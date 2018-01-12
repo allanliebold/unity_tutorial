@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour {
   public float knockbackSide, knockbackUp, knockbackDuration;
   private float knockbackCounter;
 
+  public float invincibilityDuration;
+  private float invincibilityCounter;
+
   public Vector3 respawnPosition;
 
   private Animator playerAnimator;
@@ -58,6 +61,14 @@ public class PlayerController : MonoBehaviour {
       }
     }
 
+    if(invincibilityCounter > 0) {
+      invincibilityCounter -= Time.deltaTime;
+    }
+
+    if(invincibilityCounter <= 0) {
+      levelManager.invincible = false;
+    }
+
     playerAnimator.SetFloat("Speed", Mathf.Abs(myRigidbody.velocity.x));
     playerAnimator.SetBool("Grounded", isGrounded);
 
@@ -70,6 +81,9 @@ public class PlayerController : MonoBehaviour {
 
   public void Knockback(){
     knockbackCounter = knockbackDuration;
+    invincibilityCounter = invincibilityDuration;
+
+    levelManager.invincible = true;
   }
 
   void OnTriggerEnter2D(Collider2D other) {
