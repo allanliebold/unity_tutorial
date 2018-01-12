@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour {
   public LayerMask groundLayer;
   public bool isGrounded;
 
+  public Vector3 respawnPosition;
+
   private Animator playerAnimator;
 
   void Start () {
