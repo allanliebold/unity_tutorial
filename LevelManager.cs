@@ -14,18 +14,20 @@ public class LevelManager : MonoBehaviour {
   public Sprite heartFull, heartHalf, heartEmpty;
   public int maxHealth, healthCount;
   private bool respawning;
-  
+
+  public Reset[] resetObjects;
+
   public GameObject deathAnimation;
 
   void Start() {
     thePlayer = FindObjectOfType<PlayerController>();
-    
+
     coinCount = 0;
     coinText.text = "Coins:" + coinCount;
-    
+
     healthCount = maxHealth;
   }
-  
+
   void Update() {
     if(healthCount <= 0 && !respawning) {
       Respawn();
@@ -37,12 +39,12 @@ public class LevelManager : MonoBehaviour {
     coinCount += coinValue;
     coinText.text = "Coins: " + coinCount;
   }
-  
+
   public void HealthDown(int damageAmount) {
     healthCount -= damageAmount;
     HeartDisplay();
   }
-  
+
   	public void HeartDisplay() {
 		switch(healthCount) {
 		case 6:
@@ -88,11 +90,16 @@ public class LevelManager : MonoBehaviour {
     yield return new WaitForSeconds(respawnTime);
     healthCount = maxHealth;
     HeartDisplay();
-    
+
     thePlayer.transform.parent = null;
     thePlayer.transform.position = thePlayer.respawnPosition;
     thePlayer.gameObject.SetActive(true);
-    
+
     respawning = false;
+
+    for(int i = 0; i < resetObjects.Length; i++) {
+      resetObjects[i].gameObject.SetActive(true);
+      resetObjects[i].ResetObject();
+    }
   }
 }
