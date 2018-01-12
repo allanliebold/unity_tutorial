@@ -31,6 +31,8 @@ public class LevelManager : MonoBehaviour {
     livesText.text = "x " + currentLives;
 
     healthCount = maxHealth;
+
+    resetObjects = FindObjectsOfType<Reset>();
   }
 
   void Update() {
