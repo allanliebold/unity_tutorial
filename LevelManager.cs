@@ -27,6 +27,9 @@ public class LevelManager : MonoBehaviour {
     coinCount = 0;
     coinText.text = "Coins:" + coinCount;
 
+    currentLives = startingLives;
+    livesText.text = "x " + currentLives;
+
     healthCount = maxHealth;
   }
 
