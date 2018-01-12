@@ -8,7 +8,8 @@ public class LevelManager : MonoBehaviour {
   public PlayerController thePlayer;
 
   public Text coinText, livesText;
-  public int coinCount;
+  public int coinCount, coinBonusAmount;
+  private int coinBonusCounter;
   public int currentLives, startingLives;
 
   public Image heart1, heart2, heart3;
@@ -26,6 +27,7 @@ public class LevelManager : MonoBehaviour {
 
     coinCount = 0;
     coinText.text = "Coins:" + coinCount;
+    coinBonusCounter = coinBonusAmount;
 
     currentLives = startingLives;
     livesText.text = "x " + currentLives;
@@ -45,6 +47,11 @@ public class LevelManager : MonoBehaviour {
   public void CoinPickup(int coinValue) {
     coinCount += coinValue;
     coinText.text = "Coins: " + coinCount;
+
+    if(coinCount > coinBonusCounter) {
+      AddLives(1);
+      coinBonusCounter += coinBonusAmount;
+    }
   }
 
   public void HealthDown(int damageAmount) {
