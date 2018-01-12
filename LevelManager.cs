@@ -91,7 +91,14 @@ public class LevelManager : MonoBehaviour {
 
   public void Respawn() {
     heart3.sprite = heart2.sprite = heart1.sprite = heartEmpty;
-    StartCoroutine("RespawnCo");
+    currentLives -= 1;
+    livesText.text = "x " + currentLives;
+
+    if(currentLives > 0) {
+      StartCoroutine("RespawnCo");
+    } else {
+      thePlayer.gameObject.SetActive(false);
+    }
   }
 
   public IEnumerator RespawnCo() {
