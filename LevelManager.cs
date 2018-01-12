@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour {
 
   public Reset[] resetObjects;
 
+  public bool invincible;
   public GameObject deathAnimation;
 
   void Start() {
@@ -41,10 +42,12 @@ public class LevelManager : MonoBehaviour {
   }
 
   public void HealthDown(int damageAmount) {
-    healthCount -= damageAmount;
-    HeartDisplay();
+    if(!invincible) {
+      healthCount -= damageAmount;
+      HeartDisplay();
 
-    thePlayer.Knockback();
+      thePlayer.Knockback();
+    }
   }
 
   	public void HeartDisplay() {
