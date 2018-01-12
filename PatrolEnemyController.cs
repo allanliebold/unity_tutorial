@@ -31,7 +31,7 @@ public class PatrolEnemyController : MonoBehaviour {
 
   void OnTriggerEnter2D(Collider2D other) {
     if(other.tag == "Boundary") {
-      Destroy(gameObject.transform.parent.gameObject);
+      gameObject.SetActive(false);
     }
   }
 
