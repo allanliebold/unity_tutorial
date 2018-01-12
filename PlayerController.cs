@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour {
   public LayerMask groundLayer;
   public bool isGrounded;
 
+  public float knockbackSide, knockbackUp, knockbackDuration;
+  private float knockbackCounter;
+
   public Vector3 respawnPosition;
 
   private Animator playerAnimator;
@@ -28,19 +31,31 @@ public class PlayerController : MonoBehaviour {
   void Update () {
     isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
 
-    if(Input.GetAxisRaw("Horizontal") > 0f) {
-      myRigidbody.velocity = new Vector3(moveSpeed, myRigidbody.velocity.y, 0f);
-      transform.localScale = new Vector3(1f, 1f, 1f);
-    }
-    else if(Input.GetAxisRaw("Horizontal") < 0f) {
-      myRigidbody.velocity = new Vector3(-moveSpeed, myRigidbody.velocity.y, 0f);
-      transform.localScale = new Vector3(-1f, 1f, 1f);
-    } else {
-      myRigidbody.velocity = new Vector3(0f, myRigidbody.velocity.y, 0f);
+    if(knockbackCounter >= 0){
+      if(Input.GetAxisRaw("Horizontal") > 0f) {
+        myRigidbody.velocity = new Vector3(moveSpeed, myRigidbody.velocity.y, 0f);
+        transform.localScale = new Vector3(1f, 1f, 1f);
+      }
+      else if(Input.GetAxisRaw("Horizontal") < 0f) {
+        myRigidbody.velocity = new Vector3(-moveSpeed, myRigidbody.velocity.y, 0f);
+        transform.localScale = new Vector3(-1f, 1f, 1f);
+      } else {
+        myRigidbody.velocity = new Vector3(0f, myRigidbody.velocity.y, 0f);
+      }
+
+      if(Input.GetButtonDown("Jump") && isGrounded){
+        myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpHeight, 0f);
+      }
     }
 
-    if(Input.GetButtonDown("Jump") && isGrounded){
-      myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpHeight, 0f);
+    if(knockbackCounter > 0) {
+      knockbackCounter -= Time.deltaTime;
+
+      if(transform.localScale.x > 0){
+        myRigidbody.velocity = new Vector3(-knockbackSide, knockbackUp, 0f);
+      } else {
+        myRigidbody.velocity = new Vector3(knockbackSide, knockbackUp, 0f);
+      }
     }
 
     playerAnimator.SetFloat("Speed", Mathf.Abs(myRigidbody.velocity.x));
@@ -51,6 +66,10 @@ public class PlayerController : MonoBehaviour {
     } else {
       feet.SetActive(false);
     }
+  }
+
+  public void Knockback(){
+    knockbackCounter = knockbackDuration;
   }
 
   void OnTriggerEnter2D(Collider2D other) {
