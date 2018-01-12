@@ -43,6 +43,8 @@ public class LevelManager : MonoBehaviour {
   public void HealthDown(int damageAmount) {
     healthCount -= damageAmount;
     HeartDisplay();
+
+    thePlayer.Knockback();
   }
 
   	public void HeartDisplay() {
