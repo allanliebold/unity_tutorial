@@ -89,6 +89,11 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
+  public void AddLives(int livesToAdd) {
+    currentLives += livesToAdd;
+    livesText.text = "x " + currentLives;
+  }
+
   public void Respawn() {
     heart3.sprite = heart2.sprite = heart1.sprite = heartEmpty;
     currentLives -= 1;
