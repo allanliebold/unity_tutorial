@@ -7,8 +7,9 @@ public class LevelManager : MonoBehaviour {
   public float respawnTime;
   public PlayerController thePlayer;
 
+  public Text coinText, livesText;
   public int coinCount;
-  public Text coinText;
+  public int currentLives, startingLives;
 
   public Image heart1, heart2, heart3;
   public Sprite heartFull, heartHalf, heartEmpty;
