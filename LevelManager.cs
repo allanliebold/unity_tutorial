@@ -48,6 +48,7 @@ public class LevelManager : MonoBehaviour {
 
   public void CoinPickup(int coinValue) {
     coinCount += coinValue;
+    pickupSound.Play();
     coinText.text = "Coins: " + coinCount;
 
     if(coinCount > coinBonusCounter) {
