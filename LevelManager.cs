@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour {
   public Text coinText, livesText;
   public int coinCount, coinBonusAmount;
   private int coinBonusCounter;
+  public AudioSource pickupSound;
+
   public int currentLives, startingLives;
 
   public Image heart1, heart2, heart3;
