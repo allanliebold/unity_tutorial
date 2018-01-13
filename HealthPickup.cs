@@ -12,6 +12,7 @@ public class HealthPickup : MonoBehaviour {
 
   void OnTriggerEnter2D(Collider2D other) {
     if(other.tag == "Player") {
+      levelManager.pickupSound.Play();
       levelManager.HealthUp(healthAmount);
       gameObject.SetActive(false);
     }
