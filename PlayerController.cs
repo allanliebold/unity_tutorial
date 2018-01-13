@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour {
   public Vector3 respawnPosition;
 
   private Animator playerAnimator;
+  public AudioSource jumpSound, hurtSound;
 
   void Start () {
     myRigidbody = GetComponent<Rigidbody2D>();
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour {
 
       if(Input.GetButtonDown("Jump") && isGrounded){
         myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpHeight, 0f);
+        jumpSound.Play();
       }
     }
 
