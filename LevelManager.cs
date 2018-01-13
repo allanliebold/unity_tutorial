@@ -60,6 +60,7 @@ public class LevelManager : MonoBehaviour {
       HeartDisplay();
 
       thePlayer.Knockback();
+      thePlayer.hurtSound.Play();
     }
   }
 
