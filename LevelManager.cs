@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour {
   public int maxHealth, healthCount;
   private bool respawning;
 
+  public GameObject gameOverScreen;
+
   public Reset[] resetObjects;
 
   public bool invincible;
@@ -120,6 +122,7 @@ public class LevelManager : MonoBehaviour {
       StartCoroutine("RespawnCo");
     } else {
       thePlayer.gameObject.SetActive(false);
+      gameOverScreen.SetActive(true);
     }
   }
 
