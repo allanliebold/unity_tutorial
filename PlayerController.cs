@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour {
     myAnimator = GetComponent<Animator>();
     respawnPosition = transform.position;
     levelManager = FindObjectOfType<LevelManager>();
+    activeMoveSpeed = moveSpeed;
   }
 
   void Update () {
@@ -41,11 +42,11 @@ public class PlayerController : MonoBehaviour {
 
     if(knockbackCounter >= 0){
       if(Input.GetAxisRaw("Horizontal") > 0f) {
-        myRigidbody.velocity = new Vector3(moveSpeed, myRigidbody.velocity.y, 0f);
+        myRigidbody.velocity = new Vector3(activeMoveSpeed, myRigidbody.velocity.y, 0f);
         transform.localScale = new Vector3(1f, 1f, 1f);
       }
       else if(Input.GetAxisRaw("Horizontal") < 0f) {
-        myRigidbody.velocity = new Vector3(-moveSpeed, myRigidbody.velocity.y, 0f);
+        myRigidbody.velocity = new Vector3(-activeMoveSpeed, myRigidbody.velocity.y, 0f);
         transform.localScale = new Vector3(-1f, 1f, 1f);
       } else {
         myRigidbody.velocity = new Vector3(0f, myRigidbody.velocity.y, 0f);
