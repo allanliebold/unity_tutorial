@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour {
       } else {
         activeMoveSpeed = moveSpeed;
       }
-      
+
       if(Input.GetAxisRaw("Horizontal") > 0f) {
         myRigidbody.velocity = new Vector3(activeMoveSpeed, myRigidbody.velocity.y, 0f);
         transform.localScale = new Vector3(1f, 1f, 1f);
@@ -111,12 +111,14 @@ public class PlayerController : MonoBehaviour {
 
   void OnCollisionEnter2D(Collision2D other) {
     if(other.gameObject.tag == "Platform") {
+      onPlatform = true;
       transform.parent = other.transform;
     }
   }
 
   void OnCollisionExit2D(Collision2D other) {
     if(other.gameObject.tag == "Platform") {
+      onPlatform = false; 
       transform.parent = null;
     }
   }
