@@ -41,6 +41,12 @@ public class PlayerController : MonoBehaviour {
     isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
 
     if(knockbackCounter >= 0){
+      if(onPlatform) {
+        activeMoveSpeed = moveSpeed * onPlatformSpeed;
+      } else {
+        activeMoveSpeed = moveSpeed;
+      }
+      
       if(Input.GetAxisRaw("Horizontal") > 0f) {
         myRigidbody.velocity = new Vector3(activeMoveSpeed, myRigidbody.velocity.y, 0f);
         transform.localScale = new Vector3(1f, 1f, 1f);
