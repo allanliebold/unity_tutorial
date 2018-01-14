@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
   public LevelManager levelManager;
 
   public float moveSpeed;
+  private float activeMoveSpeed;
   public float jumpHeight;
   public GameObject feet;
 
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour {
   public float groundRadius;
   public LayerMask groundLayer;
   public bool isGrounded;
+
+  public bool onPlatform;
+  public float onPlatformSpeed;
 
   public float knockbackSide, knockbackUp, knockbackDuration;
   private float knockbackCounter;
