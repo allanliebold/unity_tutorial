@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour {
   private bool respawning;
 
   public GameObject gameOverScreen;
+  public AudioSource levelMusic, gameOverMusic;
 
   public Reset[] resetObjects;
 
@@ -123,6 +124,8 @@ public class LevelManager : MonoBehaviour {
     } else {
       thePlayer.gameObject.SetActive(false);
       gameOverScreen.SetActive(true);
+      levelMusic.Stop();
+      gameOverMusic.Play();
     }
   }
 
