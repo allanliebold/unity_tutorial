@@ -138,6 +138,7 @@ public class LevelManager : MonoBehaviour {
     HeartDisplay();
 
     thePlayer.transform.parent = null;
+    thePlayer.onPlatform = false;
     thePlayer.transform.position = thePlayer.respawnPosition;
     thePlayer.gameObject.SetActive(true);
 
