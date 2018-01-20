@@ -4,4 +4,6 @@ PlayerController.cs - This script handles input and player character movement, b
 
 LevelManager.cs - Contains various game data such as player health, coins, and lives, as well as the UI displays for each. Controls the Game Over screen and respawning the player character on death. 
 
+CheckPointController - Assigns and updates the current checkpoint when the player character touches a checkpoint object. This becomes the respawn point where the player will appear after dying. 
+
 LevelEnd.cs - Loads the next specified scene when the player character comes into contact with an object with this script attached. 
