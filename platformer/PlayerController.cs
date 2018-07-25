@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
   public bool onPlatform;
   public float onPlatformSpeed;
 
+  // Knockback
   public float knockbackSide, knockbackUp, knockbackDuration;
   private float knockbackCounter;
 
