@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
   public float jumpHeight;
   public GameObject feet;
 
+  // Ground Check
   public Transform groundCheck;
   public float groundRadius;
   public LayerMask groundLayer;
