@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour {
   private int coinBonusCounter;
   public AudioSource pickupSound;
 
+  // Lives and Health
   public int currentLives, startingLives;
 
   public Image heart1, heart2, heart3;
