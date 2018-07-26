@@ -75,7 +75,6 @@ public class LevelManager : MonoBehaviour {
       healthCount = maxHealth;
     HeartDisplay();
   }
-
   	public void HeartDisplay() {
 		switch(healthCount) {
 		case 6:
