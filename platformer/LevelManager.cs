@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour {
   public float respawnTime;
   public PlayerController thePlayer;
 
+  // Coins
   public Text coinText, livesText;
   public int coinCount, coinBonusAmount;
   private int coinBonusCounter;
