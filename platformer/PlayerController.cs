@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour {
   private Rigidbody2D myRigidbody;
   public LevelManager levelManager;
 
+  // Movement
   public float moveSpeed;
   private float activeMoveSpeed;
   public float jumpHeight;
