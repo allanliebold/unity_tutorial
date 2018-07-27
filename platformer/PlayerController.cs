@@ -6,6 +6,6 @@ public class PlayerController : MonoBehaviour {
   public Rigidbody2D playerBody;
   
   void Start() {
-    
+    playerBody = GetComponent<Rigidbody2D>();
   }
 }
