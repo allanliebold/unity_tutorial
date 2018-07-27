@@ -16,14 +16,14 @@ public class PlayerController : MonoBehaviour {
   public float groundRadius;
   public LayerMask groundLayer;
   public bool isGrounded;
-
+    // Platform Check
   public bool onPlatform;
   public float onPlatformSpeed;
 
   // Knockback
   public float knockbackSide, knockbackUp, knockbackDuration;
   private float knockbackCounter;
-
+    // Invincibility
   public float invincibilityDuration;
   private float invincibilityCounter;
 
