@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
   public GameObject feet;
 
   // Ground Check
-  public Transform groundCheck;
+  public Transform groundCheck; // a transform is any object in that has a position in the game (x, y, z)
   public float groundRadius;
   public LayerMask groundLayer;
   public bool isGrounded;
