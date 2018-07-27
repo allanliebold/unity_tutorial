@@ -87,7 +87,6 @@ public class PlayerController : MonoBehaviour {
 
     playerAnimator.SetFloat("Speed", Mathf.Abs(myRigidbody.velocity.x));
     playerAnimator.SetBool("Grounded", isGrounded);
-
     if(myRigidbody.velocity.y < 0) {
       feet.SetActive(true);
     } else {
