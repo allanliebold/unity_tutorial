@@ -17,5 +17,9 @@ public class PlayerController : MonoBehaviour {
     } else {
       playerBody.velocity = new Vector3(0f, playerBody.velocity.y, 0f);
     }
+    
+    if(Input.GetButtonDown('Jump') {
+      
+    }
   }
 }
