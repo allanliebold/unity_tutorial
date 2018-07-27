@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
     }
     
     if(Input.GetButtonDown('Jump') {
-      
+      playerBody.velocity = new Vector3(playerBody.velocity.x, jumpHeight, 0f);  
     }
   }
 }
