@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour {
       
     } else if(Input.GetAxisRaw('Horizontal') < 0f) {
       
+    } else {
+      
     }
   }
 }
