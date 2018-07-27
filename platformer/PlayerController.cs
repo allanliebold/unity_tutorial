@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
     if(Input.GetAxisRaw('Horizontal') > 0f) {
       playerBody.velocity = new Vector3(moveSpeed, playerBody.velocity.y, 0f);
     } else if(Input.GetAxisRaw('Horizontal') < 0f) {
-      
+      playerBody.velocity = new Vector3(-moveSpeed, playerBody.velocity.y, 0f);
     } else {
       
     }
