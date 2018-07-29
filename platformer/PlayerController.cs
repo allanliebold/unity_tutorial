@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     
   public Transform groundCheck;
   public float groundCheckRadius;
+  public LayerMask ground;
   
   void Start() {
     playerBody = GetComponent<Rigidbody2D>();
