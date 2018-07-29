@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
       playerBody.velocity = new Vector3(0f, playerBody.velocity.y, 0f);
     }
     
-    if(Input.GetButtonDown('Jump') && isGrounded) {
+    if(Input.GetButtonDown("Jump") && isGrounded) {
       playerBody.velocity = new Vector3(playerBody.velocity.x, jumpHeight, 0f);  
     }
     
