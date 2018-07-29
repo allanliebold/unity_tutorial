@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour {
   public float moveSpeed; 
   public float jumpHeight;
     
+  public Transform groundCheck;
+  
   void Start() {
     playerBody = GetComponent<Rigidbody2D>();
   }
