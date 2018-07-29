@@ -36,6 +36,6 @@ public class PlayerController : MonoBehaviour {
     }
     
     animator.SetFloat("Speed", Mathf.Abs(playerBody.velocity.x));
-    animator.SetBool();
+    animator.SetBool("Grounded");
   }
 }
