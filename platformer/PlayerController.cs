@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
   public float jumpHeight;
     
   public Transform groundCheck;
+  public float groundCheckRadius;
   
   void Start() {
     playerBody = GetComponent<Rigidbody2D>();
