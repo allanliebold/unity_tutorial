@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour {
   void Update() {
     isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, ground);
     
-    if(Input.GetAxisRaw('Horizontal') > 0f) {
+    if(Input.GetAxisRaw("Horizontal") > 0f) {
       playerBody.velocity = new Vector3(moveSpeed, playerBody.velocity.y, 0f);
     } else if(Input.GetAxisRaw('Horizontal') < 0f) {
       playerBody.velocity = new Vector3(-moveSpeed, playerBody.velocity.y, 0f);
