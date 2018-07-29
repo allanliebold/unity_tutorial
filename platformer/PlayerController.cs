@@ -4,8 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
   public Rigidbody2D playerBody;
   
-  public float moveSpeed; 
-  public float jumpHeight;
+  public float moveSpeed, jumpHeight;
     
   public Transform groundCheck;
   public float groundCheckRadius;
