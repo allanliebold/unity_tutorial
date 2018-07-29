@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour {
   public float groundCheckRadius;
   public LayerMask ground;
   
+  public bool isGrounded;
+  
   void Start() {
     playerBody = GetComponent<Rigidbody2D>();
   }
