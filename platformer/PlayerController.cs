@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour {
   
   public bool isGrounded;
   
+  private Animator animator;
+  
   void Start() {
     playerBody = GetComponent<Rigidbody2D>();
   }
