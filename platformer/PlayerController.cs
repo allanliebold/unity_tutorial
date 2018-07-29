@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour {
   public Transform groundCheck;
   public float groundCheckRadius;
   public LayerMask ground;
-  
   public bool isGrounded;
   
   private Animator animator;
