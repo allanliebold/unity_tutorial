@@ -35,6 +35,6 @@ public class PlayerController : MonoBehaviour {
       playerBody.velocity = new Vector3(playerBody.velocity.x, jumpHeight, 0f);  
     }
     
-    animator.SetFloat();
+    animator.SetFloat("Speed", playerBody.velocity.x);
   }
 }
