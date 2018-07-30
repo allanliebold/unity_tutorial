@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 
 public class CameraController : MonoBehaviour {
-
   public GameObject target;
   public float viewAhead;
   public float cameraSpeed;
