@@ -2,10 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class CheckpointController : MonoBehaviour {
-
   private SpriteRenderer spriteRenderer;
-  public Sprite flagClosed;
-  public Sprite flagOpen;
+  public Sprite flagClosed, flagOpen;
 
   void Start() {
     spriteRenderer = GetComponent<SpriteRenderer>();
