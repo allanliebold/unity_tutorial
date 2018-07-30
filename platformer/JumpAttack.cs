@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 
 public class JumpAttack : MonoBehaviour {
-
   private Rigidbody2D playerBody;
   public float bounceAmount;
   public GameObject enemyDeath;
