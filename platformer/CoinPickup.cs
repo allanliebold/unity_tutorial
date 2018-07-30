@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 
 public class CoinPickup : MonoBehaviour {
-
   public LevelManager levelManager;
   public int coinValue;
 
