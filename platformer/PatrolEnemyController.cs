@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 
 public class PatrolEnemyController : MonoBehaviour {
-
   private Rigidbody2D enemyBody;
 
   public Transform leftPoint, rightPoint;
