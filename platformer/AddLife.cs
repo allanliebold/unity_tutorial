@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 
 public class AddLife : MonoBehaviour{
-
   public int livesToAdd;
   private LevelManager levelManager;
 
