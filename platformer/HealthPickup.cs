@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 
 public class HealthPickup : MonoBehaviour {
-
   public LevelManager levelManager;
   public int healthAmount;
 
