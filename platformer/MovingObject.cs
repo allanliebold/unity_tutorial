@@ -2,11 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 public class MovingObject : MonoBehaviour {
-
   public GameObject movingObject;
 
-  public Transform startPoint;
-  public Transform endPoint;
+  public Transform startPoint, endPoint;
   public float moveSpeed;
   private Vector3 currentTarget;
 
