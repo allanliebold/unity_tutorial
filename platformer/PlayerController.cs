@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour {
     animator = GetComponent<Animator> ();
   }
   
+  void Start() {
+    
+  }
+  
   void Update() {
     isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, ground);
     isClimbing = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, ladder);
