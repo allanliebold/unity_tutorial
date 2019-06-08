@@ -5,16 +5,7 @@ public class PlayerController : MonoBehaviour {
   public Rigidbody2D playerBody;
   
   public float moveSpeed, jumpHeight;
-  public Transform groundCheck;
-  public float groundCheckRadius;
-  
-}
 
-public class PlayerController : MonoBehaviour {
-  public Rigidbody2D playerBody;
-  
-  public float moveSpeed, jumpHeight;
-    
   public Transform groundCheck;
   public float groundCheckRadius;
   public LayerMask ground, ladder;
