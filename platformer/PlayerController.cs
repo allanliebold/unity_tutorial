@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
   }
   
   void Start() {
-    
+    playerBody = GetComponent<Rigidbody2D> ();
   }
   
   void Update() {
