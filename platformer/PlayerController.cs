@@ -35,8 +35,6 @@ public class PlayerController : MonoBehaviour {
       playerBody.velocity = new Vector3(playerBody.velocity.x, jumpHeight, 0f);  
     }
     
-    playerBody.velocity = new Vector3(playerBody.velocity.x);
-    
     animator.SetFloat("Speed", Mathf.Abs(playerBody.velocity.x));
     animator.SetBool("Grounded", isGrounded);
   }
