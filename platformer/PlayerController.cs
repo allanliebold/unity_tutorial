@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
   private Animator animator;
   
   void Start() {
-    playerBody = GetComponent<Rigidbody2D> ();
+    PlayerBody = GetComponent<Rigidbody2D> ();
     animator = GetComponent<Animator> ();
   }
   
