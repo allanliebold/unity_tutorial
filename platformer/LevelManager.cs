@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class LevelManager : MonoBehaviour {
-
   public float respawnTime;
   public PlayerController thePlayer;
 
