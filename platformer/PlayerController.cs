@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
   
   void Update() {
     Grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, ground);
-    isClimbing = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, ladder);
+    Climbing = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, ladder);
     
     if(Input.GetAxisRaw("Horizontal") > 0f) {
       playerBody.velocity = new Vector3(moveSpeed, playerBody.velocity.y, 0f);
