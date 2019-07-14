@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
   public LayerMask ground, ladder;
   public bool isGrounded;
   public bool isClimbing;
-  private Animator animator;
+  private Animator Animator;
   
   void Start() {
     playerBody = GetComponent<Rigidbody2D> ();
