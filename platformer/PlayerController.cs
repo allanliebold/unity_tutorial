@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour {
   public LayerMask ground, ladder;
   public bool isGrounded;
   public bool isClimbing;
-  
   private Animator animator;
   
   void Start() {
